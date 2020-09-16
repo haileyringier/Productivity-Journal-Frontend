@@ -1,22 +1,22 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header'
-import NavBar from './components/NavBar';
-import Calendar from './components/Calendar'
-import DailyGoals from './components/DailyGoals'
-import HabitTracker from './components/HabitTracker'
-import Journal from './components/Journal'
+import Home from './Home'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
+import JournalPage from './components/JournalPage'
+import HabitTrackerPage from './components/HabitTrackerPage'
+import CalendarPage from './components/CalendarPage'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <NavBar />
-      <Calendar />
-      <DailyGoals />
-      <HabitTracker />
-      <Journal />
-    </div>
+      <div className="App">
+        <Switch>
+            <Route exact path='/' component={Home} />
+            <Route  path='/journal' component={JournalPage} />
+            <Route path='/habittracker' component={HabitTrackerPage} />
+            <Route path='/calendar' component={CalendarPage} />
+            <Redirect to='/' />
+        </Switch>
+      </div>
   );
 }
 

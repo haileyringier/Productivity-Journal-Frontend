@@ -3,6 +3,6 @@ import React from 'react'
 export default function Header(){
 
     return(
-        <h1>Productivity Journal</h1>
+        <h1>Hello, User</h1>
     )
 }
