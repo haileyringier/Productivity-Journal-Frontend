@@ -5,10 +5,13 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-ro
 import JournalPage from './components/JournalPage'
 import HabitTrackerPage from './components/HabitTrackerPage'
 import CalendarPage from './components/CalendarPage'
+import NavBar from './components/NavBar';
+import 'rsuite/lib/styles/index.less'
 
 function App() {
   return (
       <div className="App">
+        <NavBar />
         <Switch>
             <Route exact path='/' component={Home} />
             <Route  path='/journal' component={JournalPage} />

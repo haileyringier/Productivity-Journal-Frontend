@@ -10,11 +10,11 @@ export default function Home() {
     return (
       <div className="App">
         <Header />
-        <NavBar />
         <Calendar />
         <DailyGoals />
         <HabitTracker />
         <Journal />
+
       </div>
     );
   }
