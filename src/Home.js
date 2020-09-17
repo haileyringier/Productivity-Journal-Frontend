@@ -6,17 +6,22 @@ import DailyGoals from './components/DailyGoals'
 import HabitTracker from './components/HabitTracker'
 import Journal from './components/Journal'
 
-export default function Home() {
-    return (
-      <div className="App">
-        <Header />
-        <Calendar />
-        <DailyGoals />
-        <HabitTracker />
-        <Journal />
 
-      </div>
-    );
-  }
+export default function Home(props) {
+
+        const { myEvents, habits, journalEntries, dailyGoals } = props
+        
+        return (
+          <div className="App">
+            <Header />
+            <Calendar myEvents={myEvents}/>
+            <DailyGoals dailyGoals={dailyGoals}/>
+            <HabitTracker habits={habits}/>
+            <Journal journalEntries={journalEntries} />
+    
+          </div>
+        );
+    }
+
   
   
