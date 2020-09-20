@@ -10,7 +10,9 @@ import 'rsuite/lib/styles/index.less'
 
 
 const baseURL = ('http://localhost:3000/')
-const calendarURL = ('http://localhost:3000/events')
+const baseURL = ('https://productivity-day-journal.herokuapp.com/')
+// const calendarURL = ('http://localhost:3000/events')
+const calendarURL = ('https://productivity-day-journal.herokuapp.com/events')
 const habitsURL = (`${baseURL}habits`)
 const journalURL = (`${baseURL}journal`)
 const goalsURL = (`${baseURL}goals`)

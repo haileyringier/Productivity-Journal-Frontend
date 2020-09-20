@@ -19,5 +19,5 @@ a.nav-link{
 .navbar-links{
   display: flex;
   flex-direction: row;
-  float: right; 
+  
 }
