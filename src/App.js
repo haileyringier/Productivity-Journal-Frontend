@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import Home from './Home'
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
-import JournalPage from './components/JournalPage'
-import HabitTrackerPage from './components/HabitTrackerPage'
-import CalendarPage from './components/CalendarPage'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import JournalPage from './components/Journal/JournalPage'
+import HabitTrackerPage from './components/Habits/HabitTrackerPage'
+import CalendarPage from './components/Calendar/CalendarPage'
 import NavBar from './components/NavBar';
 import 'rsuite/lib/styles/index.less'
+
 
 const baseURL = ('http://localhost:3000/')
 const calendarURL = ('http://localhost:3000/events')

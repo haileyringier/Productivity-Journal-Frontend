@@ -1,10 +1,9 @@
 import React from 'react'
 import Header from './components/Header'
-import NavBar from './components/NavBar'
-import Calendar from './components/Calendar'
-import DailyGoals from './components/DailyGoals'
-import HabitTracker from './components/HabitTracker'
-import Journal from './components/Journal'
+import DailyGoals from './components/Goals/DailyGoals'
+import HabitTracker from './components/Habits/HabitTracker'
+import Journal from './components/Journal/Journal'
+import Calendar from './components/Calendar/Calendar'
 
 
 export default function Home(props) {
@@ -14,7 +13,7 @@ export default function Home(props) {
         return (
           <div className="App">
             <Header />
-            <Calendar myEvents={myEvents}/>
+            <Calendar myEvents={myEvents} />
             <DailyGoals dailyGoals={dailyGoals}/>
             <HabitTracker habits={habits}/>
             <Journal journalEntries={journalEntries} />

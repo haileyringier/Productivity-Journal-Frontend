@@ -1,14 +1,23 @@
-.side-nav-bar{
-  background-color: darkslategray;
-  color: white;
-  border: 2px solid black;
+.nav-bar{
+  color: darkslategray;
+  /* border: 2px solid darkslategray; */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.19), 0 2px 6px darkslategray;
   display: flex;
   flex-direction: row;
-  
+  margin: 15px;
 }
 a.nav-link{
-  color: white; 
+  color: darkslategray; 
   font-size: 20px;
   padding: 10px; 
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px; 
+}
+.navbar-links{
+  display: flex;
+  flex-direction: row;
+  float: right; 
 }

@@ -6,5 +6,5 @@ export default function Goal(props){
         <li>
             <p>{props.description}</p>
         </li>
-    )
+    )    
 }
