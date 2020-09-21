@@ -1,12 +1,14 @@
 .nav-bar{
-  color: darkslategray;
+  color: black;
   /* border: 2px solid darkslategray; */
   box-shadow: 0 8px 15px rgba(0,0,0,0.19), 0 2px 6px darkslategray;
   display: flex;
   flex-direction: row;
+  /* background-color: gainsboro; */
+  padding: 0px;
 }
 a.nav-link{
-  color: darkslategray; 
+  color: black; 
   font-size: 20px;
   padding: 10px; 
   text-decoration: none;
@@ -20,4 +22,33 @@ a.nav-link{
   flex-direction: row;
   justify-content: right;
   justify-self: right;
+}
+.App{
+  /* font-family: 'Baloo Tammudu 2';
+  font-family: 'Montserrat', sans-serif; */
+  font-family: Roboto;
+  /* color: darkslategray; */
+}
+.right-nav{
+  display: flex;
+  right: 0px;
+  position: fixed;
+  align-items: baseline;
+  margin-top: 10px;
+}
+.page-title{
+  padding: 0px;
+  align-self: baseline;
+}
+.sign-out-button{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: none;
+  border: none;
+  color: black; 
+  font-size: 20px;
+  padding: 10px; 
+  font-size: 15px; 
+  font-family: 'Baloo Tammudu 2';
 }
