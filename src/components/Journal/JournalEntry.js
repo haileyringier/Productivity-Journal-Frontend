@@ -1,7 +1,8 @@
 import React from 'react'
 
 export default function Event(props){
-const { date, content } = props
+
+    const { date, content } = props
 
     return(
         <li>

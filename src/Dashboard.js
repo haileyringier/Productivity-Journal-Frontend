@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -132,48 +132,40 @@ const journalURL = (`${baseURL}journal`)
 const goalsURL = (`${baseURL}goals`)
 
 
-export default class Dashboard extends React.Component {
+export default function Dashboard() {
 
-    state = {
-        user: {
-          name:"",
-          username: "",
-        },
-        date: "",
-        myEvents: [],
-        habits: [],
-        journalEntries: [],
-        dailyGoals: [],
-        open: true
-    }
+    const [user, setUser] = useState([])
+    const [date, setDate] = useState([])
+    const [events, setEvents] = useState([])
+    const [habits, setHabits] = useState([])
+    const [goals, setGoals] = useState([])
+    const [journalEntries, setJournalEntries] = useState([])
+    const [open, setOpen] = useState(false);
+    
+    const classes = useStyles();
 
-    componentDidMount(){
+   useEffect(() => {
         fetch(calendarURL)
             .then(response => response.json())
-            .then(response => this.setState({myEvents: response.events}))
+            .then(response => setEvents(response))
         fetch(habitsURL)
             .then(response => response.json())
-            .then(response => this.setState({habits: response.habits}))
+            .then(response => setHabits(response))
         fetch(journalURL)
             .then(response => response.json())
-            .then(response => this.setState({journalEntries: response.journal}))
+            .then(response => setJournalEntries(response))
         fetch(goalsURL)
             .then(response => response.json())
-            .then(response => this.setState({dailyGoals: response.goals}))
-    }
+            .then(response => setGoals(response))
+  }, [])
 
-render(){
-const { myEvents, habits, journalEntries, dailyGoals } = this.state
-
-const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
+   console.log(events, goals, journalEntries, habits)
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -217,10 +209,10 @@ const classes = useStyles();
             exact path='/' 
             render={routerProps => 
             <Home {...routerProps} 
-                myEvents={myEvents} 
+                myEvents={events} 
                 habits={habits} 
                 journalEntries={journalEntries} 
-                dailyGoals={dailyGoals} />
+                dailyGoals={goals} />
             }
         />
         <Route  
@@ -237,7 +229,7 @@ const classes = useStyles();
             render={routerProps => 
             <CalendarPage
                 {...routerProps} 
-                myEvents={myEvents}
+                myEvents={events}
         />
             } 
         />
@@ -255,4 +247,4 @@ const classes = useStyles();
       </main>
     </div>
   )
-}}
+}

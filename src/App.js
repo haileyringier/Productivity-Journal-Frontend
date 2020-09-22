@@ -2,27 +2,11 @@ import React from 'react';
 import './App.css';
 import 'rsuite/lib/styles/index.less'
 import Dashboard from './Dashboard';
-import NewDashboard from './components/NewDashboard'
-
-
-// import { mainListItems, secondaryListItems } from './components/ListItems';
-// import DailyGoals from './components/Goals/DailyGoals'
-// import HabitTracker from './components/Habits/HabitTracker'
-// import Journal from './components/Journal/Journal'
-// import Calendar from './components/Calendar/Calendar'
-// import { Switch, Route, Redirect } from 'react-router-dom'
-// import JournalPage from './components/Journal/JournalPage'
-// import HabitTrackerPage from './components/Habits/HabitTrackerPage'
-// import CalendarPage from './components/Calendar/CalendarPage'
-// import Home from './Home'
-
-
 
 export default function App(){
   return(
     <>
-    {/* <Dashboard /> */}
-    <NewDashboard />
+    <Dashboard />
     </>
   )
 }

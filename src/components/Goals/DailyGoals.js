@@ -21,7 +21,7 @@ export default function DailyGoal(props){
                 </Fab> */}
             </div>
             <ul>
-                {/* {showGoals()} */}
+                {showGoals()}
             </ul>
         </div>
     )  
