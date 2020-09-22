@@ -12,7 +12,7 @@ export default function Home(props) {
         
         return (
           <div className="App">
-            <Header />
+            
             <Calendar myEvents={myEvents} />
             <DailyGoals dailyGoals={dailyGoals}/>
             <HabitTracker habits={habits}/>

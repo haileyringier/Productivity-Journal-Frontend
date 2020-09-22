@@ -10,7 +10,7 @@ export default function Calendar(props){
         <div>
             <h1>Calendar</h1>
             <ul>
-            {showEvents()}
+            {/* {showEvents()} */}
             </ul>
         </div>
     )

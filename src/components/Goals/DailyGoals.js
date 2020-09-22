@@ -16,12 +16,12 @@ export default function DailyGoal(props){
         <div className='goal-section'>
             <div className='goal-header'>
                 <h1>Daily Goals</h1>
-                <Fab color="primary" aria-label="add" size='small' onClick={addGoal}>
+                {/* <Fab color="primary" aria-label="add" size='small' onClick={addGoal}>
                         <AddIcon />
-                </Fab>
+                </Fab> */}
             </div>
             <ul>
-                {showGoals()}
+                {/* {showGoals()} */}
             </ul>
         </div>
     )  

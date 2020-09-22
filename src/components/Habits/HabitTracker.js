@@ -10,7 +10,7 @@ export default function HabitTracker(props){
         <div>
             <h1>Habit Trackers</h1>
             <ul>
-                {showHabits()}
+                {/* {showHabits()} */}
             </ul>
         </div>
     )
