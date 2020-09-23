@@ -27,7 +27,7 @@ export default function Home(props) {
   const { myEvents, habits, journalEntries, dailyGoals } = props
         
   return (
-    <div className="App">
+    <div className="home-page">
       <Header />
       <Grid container spacing={3}>
         <Grid item xs={12}>

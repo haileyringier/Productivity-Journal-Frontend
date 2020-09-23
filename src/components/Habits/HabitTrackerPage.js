@@ -1,5 +1,7 @@
 import React from 'react'
 import Habit from './Habit'
+import Fab from '@material-ui/core/Fab'
+import AddIcon from '@material-ui/icons/Add'
 
 export default function HabitTrackerPage(props){
 
@@ -8,7 +10,12 @@ export default function HabitTrackerPage(props){
     })
     return(
         <div>
-            <h1>Habit Trackers</h1>
+            <div className='habit-header'>
+            <h1 className='section-name'>Habit Trackers</h1>
+            <Fab color="primary" aria-label="add" size='small'>
+                        <AddIcon />
+            </Fab>
+            </div>
             <ul>
                 {showHabits()}
             </ul>

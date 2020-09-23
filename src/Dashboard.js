@@ -98,6 +98,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     height: '100vh',
     overflow: 'auto',
+    padding: '15px'
   },
   container: {
     paddingTop: theme.spacing(4),

@@ -1,5 +1,7 @@
 import React from 'react'
 import JournalEntry from './JournalEntry'
+import Fab from '@material-ui/core/Fab'
+import AddIcon from '@material-ui/icons/Add'
 
 export default function Journal(props){
 
@@ -8,8 +10,10 @@ export default function Journal(props){
     // })
     return(
         <div>
-            <h1>Journal Entry</h1>
-            <button>Add an entry</button>
+            <h1 className='section-name'>Journal Entry</h1>
+            <Fab color="primary" aria-label="add" size='small'>
+                        <AddIcon />
+                </Fab>
             {/* {showJournalEntries()} */}
         </div>
     )

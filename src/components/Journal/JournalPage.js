@@ -9,7 +9,7 @@ export default function JournalPage(props){
     })
     return(
         <div>
-            <p>Journal Page</p>
+            <h1>My Journal</h1>
             {showEntries()}
         </div>
     )

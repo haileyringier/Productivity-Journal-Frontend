@@ -1,0 +1,35 @@
+.section-name{
+  color: black;
+  margin-right: 15px;
+}
+.goal-li{
+  color: black;
+  /* list-style: none; */
+  font-size: 18px;
+}
+.goal-list{
+  text-align: left;
+}
+.goal-header{
+  display: flex;
+  align-items: baseline;
+}
+.habit-header{
+  display: flex;
+  align-items: baseline;
+}
+.habit-list{
+  text-align: left;
+  color: black;
+  display: flex;
+}
+.habit-li{
+  margin-right: 30px;
+}
+.calendar-header{
+  display: flex;
+}
+.calendar-list{
+  text-align: left;
+  color: black;
+}

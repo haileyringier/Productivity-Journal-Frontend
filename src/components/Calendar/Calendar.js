@@ -7,9 +7,11 @@ export default function Calendar(props){
         return <Event title={event.title} content={event.content} date={event.date} />
     })
     return(
-        <div>
-            <h1>Calendar</h1>
-            <ul>
+        <div className='calendar-section'>
+            <div className='calendar-header'>
+                <h1 className='section-name'>Calendar</h1>
+            </div>
+            <ul className='calendar-list'>
             {showEvents()}
             </ul>
         </div>
