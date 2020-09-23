@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const baseURL = ('http://localhost:5000/')
+const baseURL = ('http://localhost:9000/')
 // const baseURL = ('https://productivity-day-journal.herokuapp.com/')
 const habitsURL = (`${baseURL}habits`)
 const calendarURL = (`${baseURL}events`)
