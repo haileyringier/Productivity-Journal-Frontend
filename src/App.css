@@ -1,9 +1,9 @@
 .section-name{
-  color: black;
+  color: #414544;
   margin-right: 15px;
 }
 .goal-li{
-  color: black;
+  color: #414544;
   /* list-style: none; */
   font-size: 18px;
 }
@@ -20,7 +20,7 @@
 }
 .habit-list{
   text-align: left;
-  color: black;
+  color: #414544;
   display: flex;
 }
 .habit-li{
@@ -31,5 +31,11 @@
 }
 .calendar-list{
   text-align: left;
-  color: black;
+  color: #414544;
+}
+.timeline-event{
+  text-align: center;
+}
+.App{
+  color: #414544;
 }
