@@ -230,9 +230,9 @@ export default function Dashboard() {
             <HabitTrackerPage 
                 {...routerProps} 
                 habits={habits}
-        />
+             />
             } 
-            />
+        />
             <Redirect to='/' />
         </Switch>
       </main>
