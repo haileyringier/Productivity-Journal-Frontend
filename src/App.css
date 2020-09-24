@@ -7,9 +7,6 @@
   /* list-style: none; */
   font-size: 18px;
 }
-.goal-list{
-  text-align: left;
-}
 .goal-header{
   display: flex;
   align-items: baseline;
@@ -39,4 +36,11 @@
 .App{
   color: #414544;
 }
-
+.goal-list-item{
+  /* display: list-item; */
+  display: flex;
+  flex-direction: column;
+}
+.goal-list{
+  justify-content: left;
+}

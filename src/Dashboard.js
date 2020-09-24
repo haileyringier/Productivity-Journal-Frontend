@@ -18,6 +18,7 @@ import JournalPage from './components/Journal/JournalPage'
 import HabitTrackerPage from './components/Habits/HabitTrackerPage'
 import CalendarPage from './components/Calendar/CalendarPage'
 import Home from './Home'
+import Moment from 'moment'
 
 function Copyright() {
   return (
@@ -126,7 +127,7 @@ const goalsURL = (`${baseURL}goals`)
 export default function Dashboard() {
 
     const [user, setUser] = useState([])
-    const [date, setDate] = useState([])
+    const [currentDate, setCurrentDate] = useState([])
     const [events, setEvents] = useState([])
     const [habits, setHabits] = useState([])
     const [goals, setGoals] = useState([])
@@ -148,7 +149,10 @@ export default function Dashboard() {
         fetch(goalsURL)
             .then(response => response.json())
             .then(response => setGoals(response))
+
+        setCurrentDate(Moment().format("dddd, MMMM Do, YYYY"))
   }, [])
+          
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -203,7 +207,8 @@ export default function Dashboard() {
                 myEvents={events} 
                 habits={habits} 
                 journalEntries={journalEntries} 
-                dailyGoals={goals} />
+                dailyGoals={goals} 
+                date={currentDate}/>
             }
         />
         <Route  

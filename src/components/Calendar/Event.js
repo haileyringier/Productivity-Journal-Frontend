@@ -24,16 +24,6 @@ export default function Event(props){
     const classes = useStyles();
     const { title, content, startTime } = props
 
-    // return(
-    //     <li>
-    //         <h3>{title}</h3>
-    //         <p>{date}</p>
-    //         <p>{content}</p>
-    //     </li>
-
-
-    // )
-
     return(
         <TimelineItem className='timeline-event'>
             <TimelineOppositeContent className='start-time'>

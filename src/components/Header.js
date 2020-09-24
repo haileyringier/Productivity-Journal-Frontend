@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Header(){
+export default function Header(props){
 
     return(
         <div className='header-section'>
-            <h2 className='date-header'>September 23, 2020</h2>
+            <h2 className='date-header'>{props.date}</h2>
         </div>
     )
 }
