@@ -50,6 +50,14 @@
   font-size: 24px;
   margin-bottom: 0px;
 }
+.journal-entry{
+  padding: 15px;
+  color: #414544;
+
+}
+.journal-entry-date{
+  color: #414544;
+}
 
 /* const teal = '#64958f'
 const coral = '#ffbb91' */

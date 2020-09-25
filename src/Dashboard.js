@@ -97,6 +97,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'column',
+    textAlign: 'center',
+    color: theme.palette.text.secondary
   },
   fixedHeight: {
     height: 240,
@@ -124,6 +126,15 @@ export default function Dashboard() {
     
     const classes = useStyles();
 
+
+    const formatJournalDate = (journal) => {
+          return {
+            id: journal.id,
+            date: journal.date.slice(0, 10),
+            entry: journal.entry
+          }
+    }
+
    useEffect(() => {
         fetch(calendarURL)
             .then(response => response.json())
@@ -133,7 +144,7 @@ export default function Dashboard() {
             .then(response => setHabits(response))
         fetch(journalURL)
             .then(response => response.json())
-            .then(response => setJournalEntries(response))
+            .then(response => setJournalEntries(response.map(journal => formatJournalDate(journal))))
         fetch(goalsURL)
             .then(response => response.json())
             .then(response => setGoals(response))
@@ -151,7 +162,7 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-   console.log(events, goals, journalEntries, habits)
+
   return (
     <div className={classes.root}>
       <CssBaseline />
