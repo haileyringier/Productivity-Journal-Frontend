@@ -16,9 +16,10 @@
   align-items: baseline;
 }
 .habit-list{
-  text-align: left;
+  text-align: center;
   color: #414544;
   display: flex;
+  flex-direction: column;
 }
 .habit-li{
   margin-right: 30px;
@@ -44,3 +45,11 @@
 .goal-list{
   justify-content: left;
 }
+.habit-title{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+/* const teal = '#64958f'
+const coral = '#ffbb91' */

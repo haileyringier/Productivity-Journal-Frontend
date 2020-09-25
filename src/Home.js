@@ -24,11 +24,11 @@ export default function Home(props) {
 
   const classes = useStyles()
 
-  const { myEvents, habits, journalEntries, dailyGoals, date } = props
+  const { myEvents, habits, journalEntries, dailyGoals, date, quote } = props
         
   return (
     <div className="home-page">
-      <Header date={date}/>
+      <Header quote={quote.quoteText} author={quote.quoteAuthor} date={date}/>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Paper className={classes.paper}><Calendar myEvents={myEvents} /></Paper>

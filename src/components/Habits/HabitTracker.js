@@ -12,9 +12,6 @@ export default function HabitTracker(props){
         <div>
             <div className='habit-header'>
             <h1 className='section-name'>Habit Trackers</h1>
-            {/* <Fab color="primary" aria-label="add" size='small'>
-                        <AddIcon />
-            </Fab> */}
             </div>
             <ul className='habit-list'>
                 {showHabits()}

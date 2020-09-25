@@ -20,19 +20,6 @@ import CalendarPage from './components/Calendar/CalendarPage'
 import Home from './Home'
 import Moment from 'moment'
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Productivity Journal
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const drawerWidth = 240;
 
 
@@ -133,6 +120,7 @@ export default function Dashboard() {
     const [goals, setGoals] = useState([])
     const [journalEntries, setJournalEntries] = useState([])
     const [open, setOpen] = useState(false);
+    const [ dailyQuote, setDailyQuote ] = useState([])
     
     const classes = useStyles();
 
@@ -149,6 +137,9 @@ export default function Dashboard() {
         fetch(goalsURL)
             .then(response => response.json())
             .then(response => setGoals(response))
+        fetch('https://quote-garden.herokuapp.com/api/v2/quotes/random')
+            .then(response => response.json())
+            .then(response => setDailyQuote(response.quote))
 
         setCurrentDate(Moment().format("dddd, MMMM Do, YYYY"))
   }, [])
@@ -193,9 +184,9 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-    <List>{mainListItems}</List>
+        <List>{mainListItems}</List>
         <Divider />
-    <List>{secondaryListItems}</List>
+        <List>{secondaryListItems}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -208,7 +199,8 @@ export default function Dashboard() {
                 habits={habits} 
                 journalEntries={journalEntries} 
                 dailyGoals={goals} 
-                date={currentDate}/>
+                date={currentDate}
+                quote={dailyQuote}/>
             }
         />
         <Route  

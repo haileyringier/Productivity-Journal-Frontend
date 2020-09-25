@@ -35,3 +35,8 @@ export default createMuiTheme({
     }
   }
 });
+
+// const teal = '#64958f'
+// const coral = '#ffbb91'
+// faf3dd
+// 065c6f
