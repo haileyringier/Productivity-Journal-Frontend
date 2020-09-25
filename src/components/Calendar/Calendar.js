@@ -7,7 +7,9 @@ export default function Calendar(props) {
 
     const showEvents = () => props.myEvents.map(event => {
         return <Event title={event.title} content={event.content} date={event.date} startTime={event.startTime} />
-    })
+      }
+    )
+
 
   return (
     <div className='calendar-section'>

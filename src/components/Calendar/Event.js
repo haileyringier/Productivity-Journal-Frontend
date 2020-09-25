@@ -22,13 +22,18 @@ const useStyles = makeStyles((theme) => ({
     
 export default function Event(props){
     const classes = useStyles();
-    const { title, content, startTime } = props
+    const { title, content, startTime, date} = props
+
+    const formatedDate = date.slice(0, 10)
 
     return(
         <TimelineItem className='timeline-event'>
             <TimelineOppositeContent className='start-time'>
                 <Typography variant="body2" color="textSecondary">
-                    {startTime}
+                     {startTime}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                     {formatedDate}
                 </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>

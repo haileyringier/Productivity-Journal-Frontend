@@ -211,7 +211,8 @@ export default function Dashboard() {
                 journalEntries={journalEntries} 
                 dailyGoals={goals} 
                 date={currentDate}
-                quote={dailyQuote}/>
+                quote={dailyQuote}
+              />
             }
         />
         <Route  

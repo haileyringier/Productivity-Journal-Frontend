@@ -31,7 +31,7 @@ export default function Home(props) {
       <Header quote={quote.quoteText} author={quote.quoteAuthor} date={date}/>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.paper}><Calendar myEvents={myEvents} /></Paper>
+          <Paper className={classes.paper}><Calendar date={date} myEvents={myEvents} /></Paper>
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}><DailyGoals dailyGoals={dailyGoals}/></Paper>
