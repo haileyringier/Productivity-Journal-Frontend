@@ -107,10 +107,10 @@ const useStyles = makeStyles((theme) => ({
 
 const baseURL = ('http://localhost:9000/')
 // const baseURL = ('https://productivity-day-journal.herokuapp.com/')
-const habitsURL = (`${baseURL}habits`)
-const calendarURL = (`${baseURL}events`)
-const journalURL = (`${baseURL}journal`)
-const goalsURL = (`${baseURL}goals`)
+const habitsURL = (`${baseURL}habits/`)
+const calendarURL = (`${baseURL}events/`)
+const journalURL = (`${baseURL}journal/`)
+const goalsURL = (`${baseURL}goals/`)
 
 
 export default function Dashboard() {
@@ -162,6 +162,21 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const deleteGoal = (selected) => {
+    const filtered = goals.filter(goal => goal.id !== selected)
+    setGoals(filtered)
+    fetch(goalsURL + selected, {
+      method: 'DELETE'
+    })
+  };
+  const addGoal = (goal) => {
+    setGoals([...goals, goal])
+    fetch(goalsURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify(goal)
+    })
+  }
 
   return (
     <div className={classes.root}>
@@ -212,6 +227,8 @@ export default function Dashboard() {
                 dailyGoals={goals} 
                 date={currentDate}
                 quote={dailyQuote}
+                deleteGoal={deleteGoal}
+                postGoal={addGoal}
               />
             }
         />

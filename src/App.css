@@ -9,7 +9,13 @@
 }
 .goal-header{
   display: flex;
-  align-items: baseline;
+  align-items: center;
+}
+.add-goal-form{
+  float: right;
+}
+.goal-form{
+  margin-left: 20px;
 }
 .habit-header{
   display: flex;
@@ -41,9 +47,11 @@
   /* display: list-item; */
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .goal-list{
   justify-content: left;
+  align-items: center;
 }
 .habit-title{
   text-align: center;
@@ -57,6 +65,11 @@
 }
 .journal-entry-date{
   color: #414544;
+}
+.calendar-page-header{
+  display: flex;
+  flex-direction: row;
+  color: #414544
 }
 
 /* const teal = '#64958f'

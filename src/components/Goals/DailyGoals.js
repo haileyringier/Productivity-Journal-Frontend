@@ -1,38 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Goal from './Goal'
 import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
-import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
-import CommentIcon from '@material-ui/icons/Comment';
+import AddGoal from './AddGoal'
 
 
 export default function DailyGoal(props){
 
+    // const [ description, setDescription  ] = useState('')
+    // const [ userId, setUserId ] = useState(1)
+    const [ goalOpen, setGoalOpen ] = useState(false)
+
+    const { deleteGoal, dailyGoals, postGoal } = props
+
+    
     const addGoal = () =>{
         console.log("clicked")
+       setGoalOpen(true)
     }
     const checkboxClicked = () =>{
         console.log("task done - delete from state")
     }
-    const showGoals = () => props.dailyGoals.map(goal => {
-        return <Goal  checkboxClicked={checkboxClicked} key={goal.id} description={goal.description} />
+    const showGoals = () => dailyGoals.map(goal => {
+        return <Goal deleteGoal={deleteGoal} checkboxClicked={checkboxClicked} key={goal.id} id={goal.id} description={goal.description} />
     })
-   
+    
+    const closeForm = () => {
+        setGoalOpen(false)
+    }
+
 
     return(
         <div className='goal-section'>
             <div className='goal-header'>
                 <h1 className='section-name'>Daily Goals</h1>
-                <Fab color="primary" aria-label="add" size='small' onClick={addGoal}>
+                <IconButton color='primary' aria-label="delete" onClick={addGoal}>
                     <AddIcon />
-                </Fab>
+                </IconButton>
+            <div className='goal-form'>
+                {goalOpen ? <AddGoal postGoal={postGoal} closeForm={closeForm}/> : null}
+            </div>
             </div>
             <List className='goal-list'>
                 <ListItem alignItems='flex-start' className='goal-list-item'>
