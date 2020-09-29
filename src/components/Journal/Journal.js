@@ -1,27 +1,58 @@
-import React from 'react'
+import React, {useEffect, useState } from 'react'
 import JournalEntry from './JournalEntry'
-import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import IconButton from '@material-ui/core/IconButton';
+import AddEntry from './AddEntry';
+import moment from 'moment'
+import HomeJournal from './HomeJournal';
 
 
 export default function Journal(props){
 
-    // const showJournalEntries = () => props.journalEntries.map(entry => {
-    //     return <JournalEntry key={entry.id} description={entry.entry} />
-    // })
+    const [ todaysDate, setTodaysDate ] = useState()
+    
+    useEffect(() => {
+        setTodaysDate(moment().format('YYYY-MM-DD'))
+        // setTodaysDate('2020-10-31')
+    },[])
+    
+    let count = 0
+
+    const showTodaysJournalEntries = () => props.journalEntries.map(entry => {
+        if (entry.date == todaysDate) {
+            count ++
+        return <HomeJournal key={entry.id} content={entry.entry} date={entry.date} />
+        }  
+    })
+
+    const [ entryForm, setEntryForm ] = useState(false)
+    const { postEntry } = props
 
     const addEntry = () => {
-        console.log("clicked add journal entry")
+        console.log(todaysDate)
+        setEntryForm(true)
+    }
+    const closeForm = () => {
+        setEntryForm(false)
     }
 
     return(
         <div>
-            <h1 className='section-name'>Journal Entry</h1>
+            <div className='journal-section-header'>
+            <h1 className='section-name'>Today's Journal Entries</h1>
             <IconButton color='primary' aria-label="delete" onClick={addEntry}>
                 <AddIcon />
             </IconButton>
-            {/* {showJournalEntries()} */}
+            </div>
+            <div className='journal-form'>
+                {entryForm ? <AddEntry postEntry={postEntry} closeForm={closeForm}/> : null}
+            </div>
+            <ul className='todays-journal-entries'>
+                {showTodaysJournalEntries()}
+            </ul>
+            {count == 0 ? <p>No entries today</p>: null}
         </div>
     )
 }

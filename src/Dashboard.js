@@ -115,7 +115,7 @@ const goalsURL = (`${baseURL}goals/`)
 
 export default function Dashboard() {
 
-    const [user, setUser] = useState([])
+    // const [user, setUser] = useState([])
     const [currentDate, setCurrentDate] = useState([])
     const [events, setEvents] = useState([])
     const [habits, setHabits] = useState([])
@@ -177,6 +177,22 @@ export default function Dashboard() {
       body: JSON.stringify(goal)
     })
   }
+  const addJournalEntry = (entry) => {
+    setJournalEntries([...journalEntries, entry])
+    fetch(journalURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify(entry)
+    })
+  }
+  const addCurrentDay = (id, newDays) => {
+    fetch(habitsURL + id, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({currentDays: newDays})
+
+    })
+  }
 
   return (
     <div className={classes.root}>
@@ -229,6 +245,8 @@ export default function Dashboard() {
                 quote={dailyQuote}
                 deleteGoal={deleteGoal}
                 postGoal={addGoal}
+                postEntry={addJournalEntry}
+                addCurrentDay={addCurrentDay}
               />
             }
         />
@@ -256,6 +274,7 @@ export default function Dashboard() {
             <HabitTrackerPage 
                 {...routerProps} 
                 habits={habits}
+                addCurrentDay={addCurrentDay}
              />
             } 
         />

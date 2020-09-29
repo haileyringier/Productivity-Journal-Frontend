@@ -24,7 +24,18 @@ export default function Home(props) {
 
   const classes = useStyles()
 
-  const { myEvents, habits, journalEntries, dailyGoals, date, quote, deleteGoal, postGoal } = props
+  const { 
+      myEvents,
+      habits,
+      journalEntries,
+      dailyGoals,
+      date,
+      quote,
+      deleteGoal,
+      postGoal,
+      postEntry,
+      addCurrentDay
+    } = props
         
   return (
     <div className="home-page">
@@ -37,10 +48,10 @@ export default function Home(props) {
           <Paper className={classes.paper}><DailyGoals deleteGoal={deleteGoal} postGoal={postGoal} dailyGoals={dailyGoals}/></Paper>
         </Grid>
         <Grid item xs={6}>
-          <Paper className={classes.paper}><HabitTracker habits={habits}/></Paper>
+          <Paper className={classes.paper}><HabitTracker addCurrentDay={addCurrentDay} habits={habits}/></Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.paper}><Journal journalEntries={journalEntries} /></Paper>
+          <Paper className={classes.paper}><Journal journalEntries={journalEntries} postEntry={postEntry} /></Paper>
         </Grid>
       </Grid>
           </div>

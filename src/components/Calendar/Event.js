@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
       paper: {
         padding: '6px 16px',
+        textAlign: 'center'
       },
       secondaryTail: {
         backgroundColor: theme.palette.secondary.main,
@@ -27,7 +28,7 @@ export default function Event(props){
     const formatedDate = date.slice(0, 10)
 
     return(
-        <TimelineItem className='timeline-event'>
+        <TimelineItem>
             <TimelineOppositeContent className='start-time'>
                 <Typography variant="body2" color="textSecondary">
                      {startTime}
@@ -40,7 +41,6 @@ export default function Event(props){
                 <TimelineConnector />
                 <TimelineDot color='primary'/>
             </TimelineSeparator>
-            
             <TimelineContent>
             <Paper elevation={3} className={classes.paper}>
                 <Typography variant="h6" component="h1">

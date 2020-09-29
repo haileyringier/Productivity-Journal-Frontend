@@ -17,9 +17,9 @@ export default function Goal(props){
         deleteGoal(id)
     }
     return(
-        <ListItemIcon className='goal-list-icon'>
+        <ListItemIcon className='goal-list-icon' alignItems='center'>
             <Checkbox onClick={checkboxClicked}/>
-            <ListItemText primary={description}/>
+            <ListItemText id='goal-item-text' primary={description} />
             {/* <CloseIcon onClick={deleteClicked}/> */}
             <IconButton aria-label="delete">
                 <CloseIcon  onClick={deleteClicked}/>

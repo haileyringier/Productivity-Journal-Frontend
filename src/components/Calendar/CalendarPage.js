@@ -48,7 +48,7 @@ export default function CalendarPage(props){
       return(
         <div>
             <div className='calendar-page-header'>
-            <h2>Add an Event</h2>
+            <h1>Calendar</h1>
             <IconButton color='primary' aria-label="delete" onClick={addEvent}>
                     <AddIcon />
             </IconButton>

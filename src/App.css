@@ -19,7 +19,6 @@
 }
 .habit-header{
   display: flex;
-  align-items: baseline;
 }
 .habit-list{
   text-align: center;
@@ -33,13 +32,6 @@
 .calendar-header{
   display: flex;
 }
-.calendar-list{
-  text-align: left;
-  color: #414544;
-}
-.timeline-event{
-  text-align: center;
-}
 .App{
   color: #414544;
 }
@@ -47,10 +39,15 @@
   /* display: list-item; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  align-items: baseline;
 }
 .goal-list{
   justify-content: left;
+  align-items: center;
+}
+#goal-item-text{
+  display:flex;
   align-items: center;
 }
 .habit-title{
@@ -69,7 +66,35 @@
 .calendar-page-header{
   display: flex;
   flex-direction: row;
-  color: #414544
+  color: #414544;
+}
+.journal-section-header{
+  display: flex;
+  flex-direction: row;
+}
+.todays-journal-entries{
+  list-style-type: none;
+  text-align: left;
+}
+#add-day{
+  width: 90px;
+  align-self: center;
+  margin-top: 15px;
+}
+.habits-section{
+  display: flex;
+  flex-direction: row;
+}
+.journal-entry-text{
+  font-size: 16px;
+}
+.habit-section{
+  display: flex;
+  flex-direction: column;
+}
+a{
+  color: #414544;
+  text-decoration: none;
 }
 
 /* const teal = '#64958f'
