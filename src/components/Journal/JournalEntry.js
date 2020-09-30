@@ -6,13 +6,12 @@ export default function Event(props){
 
     const { date, content } = props
 
-    // const formatDate = date.slice(0, 10)
     return(
         <Grid item xs={7}>
-          <Paper className='journal-entry'>
-              <h3 className='journal-entry-date'>Date: {date}</h3> 
-              <p className='journal-entry-text'>{content}</p>
-              </Paper>
+            <Paper className='journal-entry'>
+                <h3 className='journal-entry-date'>Date: {date}</h3> 
+                <p className='journal-entry-text'>{content}</p>
+            </Paper>
         </Grid>
     )
 }

@@ -1,8 +1,5 @@
 import React, {useEffect, useState } from 'react'
-import JournalEntry from './JournalEntry'
 import AddIcon from '@material-ui/icons/Add'
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import IconButton from '@material-ui/core/IconButton';
 import AddEntry from './AddEntry';
 import moment from 'moment'
@@ -49,7 +46,7 @@ export default function Journal(props){
             <ul className='todays-journal-entries'>
                 {showTodaysJournalEntries()}
             </ul>
-            {count == 0 ? <p>No entries today</p>: null}
+            {count === 0 ? <p>No entries today</p>: null}
         </div>
     )
 }

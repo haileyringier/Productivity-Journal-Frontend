@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Goal from './Goal'
-import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -14,15 +13,12 @@ export default function DailyGoal(props){
 
     const { deleteGoal, dailyGoals, postGoal } = props
 
-    
     const addGoal = () =>{
-        console.log("clicked")
-       setGoalOpen(true)
+        setGoalOpen(true)
     }
     const showGoals = () => dailyGoals.map(goal => {
         return <Goal deleteGoal={deleteGoal} key={goal.id} id={goal.id} description={goal.description} />
     })
-    
     const closeForm = () => {
         setGoalOpen(false)
     }
