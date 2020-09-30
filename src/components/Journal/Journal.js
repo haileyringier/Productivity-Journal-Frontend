@@ -12,10 +12,11 @@ import HomeJournal from './HomeJournal';
 export default function Journal(props){
 
     const [ todaysDate, setTodaysDate ] = useState()
+    const [ entryForm, setEntryForm ] = useState(false)
+    const { postEntry, date } = props
     
     useEffect(() => {
         setTodaysDate(moment().format('YYYY-MM-DD'))
-        // setTodaysDate('2020-10-31')
     },[])
     
     let count = 0
@@ -27,11 +28,7 @@ export default function Journal(props){
         }  
     })
 
-    const [ entryForm, setEntryForm ] = useState(false)
-    const { postEntry } = props
-
     const addEntry = () => {
-        console.log(todaysDate)
         setEntryForm(true)
     }
     const closeForm = () => {
@@ -47,7 +44,7 @@ export default function Journal(props){
             </IconButton>
             </div>
             <div className='journal-form'>
-                {entryForm ? <AddEntry postEntry={postEntry} closeForm={closeForm}/> : null}
+                {entryForm ? <AddEntry postEntry={postEntry} date={todaysDate} closeForm={closeForm}/> : null}
             </div>
             <ul className='todays-journal-entries'>
                 {showTodaysJournalEntries()}

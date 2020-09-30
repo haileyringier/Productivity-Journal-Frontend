@@ -10,8 +10,6 @@ import AddGoal from './AddGoal'
 
 export default function DailyGoal(props){
 
-    // const [ description, setDescription  ] = useState('')
-    // const [ userId, setUserId ] = useState(1)
     const [ goalOpen, setGoalOpen ] = useState(false)
 
     const { deleteGoal, dailyGoals, postGoal } = props
@@ -21,18 +19,13 @@ export default function DailyGoal(props){
         console.log("clicked")
        setGoalOpen(true)
     }
-    const checkboxClicked = () =>{
-        console.log("task done - delete from state")
-    }
     const showGoals = () => dailyGoals.map(goal => {
-        return <Goal deleteGoal={deleteGoal} checkboxClicked={checkboxClicked} key={goal.id} id={goal.id} description={goal.description} />
+        return <Goal deleteGoal={deleteGoal} key={goal.id} id={goal.id} description={goal.description} />
     })
     
     const closeForm = () => {
         setGoalOpen(false)
     }
-
-
     return(
         <div className='goal-section'>
             <div className='goal-header'>

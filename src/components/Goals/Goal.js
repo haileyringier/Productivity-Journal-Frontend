@@ -10,7 +10,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 export default function Goal(props){
 
-    const { description, checkboxClicked, id, deleteGoal } = props
+    const { description, id, deleteGoal } = props
 
     const deleteClicked = () => {
         console.log("delete goal clicked", id)
@@ -18,9 +18,8 @@ export default function Goal(props){
     }
     return(
         <ListItemIcon className='goal-list-icon' alignItems='center'>
-            <Checkbox onClick={checkboxClicked}/>
+            <Checkbox size='small'/>
             <ListItemText id='goal-item-text' primary={description} />
-            {/* <CloseIcon onClick={deleteClicked}/> */}
             <IconButton aria-label="delete">
                 <CloseIcon  onClick={deleteClicked}/>
             </IconButton>

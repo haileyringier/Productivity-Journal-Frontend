@@ -6,8 +6,6 @@ import useStyles from '../../Dashboard'
 
 
 export default function HomeJournal(props){
-
-    const classes = useStyles()
     
     const { date, content } = props
 
@@ -17,8 +15,5 @@ export default function HomeJournal(props){
             <h3 className='journal-entry-date'>Date: {date}</h3> 
             <p>{content}</p>
         </li>
-          
-              
-        
     )
 }

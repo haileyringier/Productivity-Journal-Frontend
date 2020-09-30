@@ -4,8 +4,7 @@
 }
 .goal-li{
   color: #414544;
-  /* list-style: none; */
-  font-size: 18px;
+  font-size: 20px;
 }
 .goal-header{
   display: flex;
@@ -41,6 +40,7 @@
   flex-direction: column;
   /* align-items: center; */
   align-items: baseline;
+  
 }
 .goal-list{
   justify-content: left;
@@ -72,6 +72,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .todays-journal-entries{
   list-style-type: none;
   text-align: left;

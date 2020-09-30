@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    height: '100%'
   },
 }));
 
@@ -51,7 +52,7 @@ export default function Home(props) {
           <Paper className={classes.paper}><HabitTracker addCurrentDay={addCurrentDay} habits={habits}/></Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.paper}><Journal journalEntries={journalEntries} postEntry={postEntry} /></Paper>
+          <Paper className={classes.paper}><Journal date={date} journalEntries={journalEntries} postEntry={postEntry} /></Paper>
         </Grid>
       </Grid>
           </div>

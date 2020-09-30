@@ -4,22 +4,21 @@ import TextField from '@material-ui/core/TextField'
 
 export default function AddEntry(props){
    
-    const { postEntry, closeForm } = props
+    const { postEntry, closeForm, date } = props
 
     const [ content, setContent  ] = useState('')
     const [ userId, setUserId ] = useState(1)
 
     const handleChange = (event) => {
         event.preventDefault()
-        console.log(event.target.value)
         setContent(event.target.value)
     }
 
     const submitEntry = (event) => {
-        console.log("content", content)
+    
         const entry = {
             entry: content,
-            date: "2020-09-29",
+            date: date,
             user_id: userId
         }
         postEntry(entry)
