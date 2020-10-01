@@ -1,68 +1,103 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Productivity Journal
+> Final Project with Flatiron SE Program in Denver
 
-## Available Scripts
+## Table of contents
+* [General info](#general-info)
+* [Intro Video](#intro-video)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Contact](#contact)
+* [License](#license)
 
-In the project directory, you can run:
+## General info
+Productivity Journal is a virtual journal to assist in organizing your day and increasing your productivity. On the dashboard a user has an overview of their upcoming events, their daily goals and a visual representation of the habits they are tracking. A user can add and delete tasks, view their events in a monely and daily calendar, review all of their journal entries in chronological order and can updated the status of the habits they are tracking.  
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Intro Video
+[Capstone/Final Presentation on Youtube](https://www.youtube.com/channel/UCv8YpacxVgL9ShVduwb3Blg?view_as=subscriber)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Technologies
+* React
+* Material UI
+* Chart.js
+* HTML5
+* CSS
+* JavaScript
+* React Big Calendar
+* Moment.js
 
-### `yarn test`
+## Setup
+The frontend of Productivity Journal has been deployed using firebase and can be found [here](https://productivity-day-journal.web.app)
+1. The backend of this project is not deployed and needs be forked and cloned. [Backend](https://github.com/haileyringier/productivity-backend)
+1. Once you fork and clone the backend repo, you will need to run:
+    $ npm install
+1. Now in the terminal of the frontend directory, run:
+    $ npm start or node index.js
+    $ then navigate to the url of the ap.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Code Examples
+```javaScript
+     <TimelineItem>
+            <TimelineOppositeContent className='start-time'>
+                <Typography variant="body2" color="textSecondary">
+                    {formatedTime}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                    {formatedDate.slice(5, 10)}
+                </Typography>
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+                <TimelineConnector />
+                <TimelineDot color='primary'/>
+            </TimelineSeparator>
+            <TimelineContent>
+            <Paper elevation={3} className={classes.paper}>
+                <Typography variant="h6" component="h1">
+                {title}
+                </Typography>
+                <Typography>{content}</Typography>
+            </Paper>
+            </TimelineContent>
+        </TimelineItem>
+```
 
-### `yarn build`
+```javascript
+    const data = {
+        labels: [
+            `Goal Days: ${goal}`,
+            `Completed: ${currentDays}`,
+        ],
+        datasets: [{
+            data: [goal, currentDays],
+            backgroundColor: [ teal, coral ],
+            hoverBackgroundColor: [ teal, coral ]
+        }]
+    };
+    const addDay = () => {
+        let newCurrent = current + 1
+        setCompleted(true)
+        setCurrentDays(newCurrent)
+        addCurrentDay(id, newCurrent)
+    }
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+* Dashboard with an overview of events, tasks, habits, and journal entries
+* Add and delete tasks as they arise and are completed
+* Add a completed habit to the tracker
+* View all journal entries in chronological order
+* View your events in a monthly or daily calendar
+* Greeted with a daily quote at the top of the page
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Status
+Project is: Looking to add Authentication and login features and deploy the backend using Heroku.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Contact
+Created by [Hailey Ringier](https://www.linkedin.com/in/hailey-ringier/) 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Feel free to contact me! 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+[Click to view]()
