@@ -28,15 +28,16 @@ Productivity Journal is a virtual journal to assist in organizing your day and i
 * Moment.js
 
 ## Setup
-The frontend of Productivity Journal has been deployed using firebase and can be found [here](https://productivity-day-journal.web.app)
-1. The backend of this project is not deployed and needs be forked and cloned. [Backend](https://github.com/haileyringier/productivity-backend)
+The frontend of Productivity Journal has been deployed using firebase and can be found [here](https://productivity-day-journal.web.app).
+1. The [backend](https://github.com/haileyringier/productivity-backend) of this project is not deployed and needs be forked and cloned.
 1. Once you fork and clone the backend repo, you will need to run:
     $ npm install
 1. Now in the terminal of the frontend directory, run:
     $ npm start or node index.js
-    $ then navigate to the url of the ap.
+     and then navigate to the url of the app.
 
 ## Code Examples
+Timeline of Events using Material UI Timeline Component
 ```javaScript
      <TimelineItem>
             <TimelineOppositeContent className='start-time'>
@@ -61,7 +62,7 @@ The frontend of Productivity Journal has been deployed using firebase and can be
             </TimelineContent>
         </TimelineItem>
 ```
-
+A doughnut Chart created using Chart.js
 ```javascript
     const data = {
         labels: [
